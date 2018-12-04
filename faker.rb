@@ -19,9 +19,24 @@ class Generator
   def job
     @random_job = Faker::Job.title
   end
+
+  def nationality
+    @random_nationality = Faker::Nation.nationality
+  end
+
+  def birthday
+    Faker::Date.birthday
+  end
+
+  def age
+    Date.today.year - birthday.year
+  end
+  
 end
 test = Generator.new
 puts test.full_name
 puts test.address_random
 puts test.zip_code
 puts test.job
+puts test.nationality
+puts test.age
