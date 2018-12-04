@@ -2,8 +2,7 @@ require 'faker'
 require 'httparty'
 require 'json'
 
-class Generator
-
+class RandomDataGenerator
   include HTTParty
 
   base_uri 'api.postcodes.io'
@@ -25,7 +24,7 @@ class Generator
   end
 
   def job
-  Faker::Job.title
+    Faker::Job.title
   end
 
   def nationality
@@ -52,16 +51,16 @@ class Generator
   def company
     Faker::Company.name
   end
-
 end
-test = Generator.new
-puts test.full_name
-puts test.address_random
-puts test.zip_code
-puts test.job
-puts test.nationality
-puts test.age
-puts test.phoneNumber
-puts test.get_random_postcode
-puts test.programming_language
-puts test.company
+
+# test = RandomDataGenerator.new
+# puts test.full_name
+# puts test.address_random
+# puts test.zip_code
+# puts test.job
+# puts test.nationality
+# puts test.age
+# puts test.phoneNumber
+# puts test.get_random_postcode
+# puts test.programming_language
+# puts test.company
